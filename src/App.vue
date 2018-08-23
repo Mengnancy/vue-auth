@@ -1,19 +1,32 @@
 <template>
-  <div id="app">
+    <div id="app">
+        <el-container>
+            <el-header>
+                <top></top>
+            </el-header>
+            <el-container>
+                <el-aside width="200px">
+                    <nav-menu></nav-menu>
+                </el-aside>
+                <el-main>
+                    <router-view class="main"></router-view>
+                </el-main>
+            </el-container>
+        </el-container>
 
-    <top></top>
-    <router-view id="main"></router-view>
-  </div>
+    </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import top from "./components/head";
+import HelloWorld from "./components/HelloWorld";
+import navMenu from "@/components/NavMenu";
+import top from "./components/top";
 export default {
     name: "app",
     components: {
         HelloWorld,
-        top
+        top,
+        navMenu
     }
 };
 </script>
@@ -25,6 +38,19 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+    /* margin-top: 60px; */
+    height: 100%;
+    width: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    /* height: 100%;
+    width: 100%; */
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
 }
 </style>
