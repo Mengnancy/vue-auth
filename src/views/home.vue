@@ -1,13 +1,13 @@
 <template>
     <div>
-
+        这是主页
     </div>
 </template>
 
 <script>
 
 export default {
-    name: "app",
+    name: "Home",
     components: {
         HelloWorld
     }

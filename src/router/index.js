@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
-import HelloWorld from "../components/HelloWorld";
+import Login from "@/views/Login"
+import Product from "@/views/Product"
+import UserManage from "@/views/UserManage"
 Vue.use(Router);
 
 const router = new Router({
@@ -9,11 +11,19 @@ const router = new Router({
     {
       path: '/',
       name: 'home',
-      component: HelloWorld
-    },{
-      path: '/HelloWorld',
-      name: 'hello',
-      component: HelloWorld
+      component: Login
+    }, {
+      path: '/login',
+      name: 'login',
+      component: Login
+    }, {
+      path: '/product',
+      name: 'product',
+      component: Product
+    }, {
+      path: '/userManage',
+      name: 'userManage',
+      component: UserManage
     }
   ]
 })
