@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <el-container>
+        <el-container class="body">
             <el-header>
                 <top></top>
             </el-header>
@@ -45,12 +45,13 @@ export default {
 * {
     margin: 0;
     padding: 0;
-    /* height: 100%;
-    width: 100%; */
 }
 html,
 body {
     height: 100%;
     width: 100%;
+}
+.body {
+    height: 100%;
 }
 </style>

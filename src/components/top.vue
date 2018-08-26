@@ -54,7 +54,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .el-row {
     background: #f87307;
     height: 100%;

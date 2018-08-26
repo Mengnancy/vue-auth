@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="navMenu">
         <el-row class="tac">
             <el-col>
                 <el-menu default-active="product" router class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
@@ -30,11 +30,8 @@ export default {
 };
 </script>
 <style>
-/* .navMenu {
-    width: 150px;
+.navMenu {
     height: 100%;
-} */
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-    min-height: 800px;
+    background-color: "#545c64" !important;
 }
 </style>
