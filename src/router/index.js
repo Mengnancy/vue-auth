@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Login from "@/views/Login"
 import Product from "@/views/Product"
+import project from "@/views/project"
 import UserManage from "@/views/UserManage"
 Vue.use(Router);
 
@@ -16,14 +17,19 @@ const router = new Router({
       path: '/login',
       name: 'login',
       component: Login
-    }, {
-      path: '/product',
-      name: 'product',
-      component: Product
-    }, {
-      path: '/userManage',
-      name: 'userManage',
-      component: UserManage
+    },
+    {
+      path: '/project',
+      component: project,
+      children: [{
+        path: '/product',
+        name: 'product',
+        component: Product
+      }, {
+        path: '/userManage',
+        name: 'userManage',
+        component: UserManage
+      }]
     }
   ]
 })
