@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Login from "@/views/Login"
-import Product from "@/views/Product"
+import Login from "@/views/login"
+import Product from "@/views/product"
 import project from "@/views/project"
 import UserManage from "@/views/UserManage"
 Vue.use(Router);
