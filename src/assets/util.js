@@ -6,6 +6,10 @@ export const session = function (key, value) {
     return sessionStorage.setItem(key, value);
 }
 
+export const removeSession = function(key){
+  return sessionStorage.removeItem(key);
+}
+
 //ajax错误处理
 export const catchError = function(error) {
     if (error.response) {

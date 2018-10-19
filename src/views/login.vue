@@ -54,7 +54,7 @@ export default {
                 .then(res => {
                     if (res.data.code == 1) {
                         util.session("sessionId", res.data.data);
-                        this.$router.push({ path: "/project" });
+                        this.$router.push({ path: "/product" });
                     } else {
                         return Promise.reject({
                             message: "登录异常！"

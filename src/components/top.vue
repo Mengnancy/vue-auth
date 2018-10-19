@@ -43,6 +43,8 @@ import iconBase from "./IconBase";
 import iconExit from "./icon/IconExit";
 import iconHome from "./icon/IconHome";
 import iconUser from "./icon/IconUser";
+import axios from "axios";
+import * as util from "../assets/util.js";
 export default {
     name: "top",
     components: {
@@ -50,6 +52,31 @@ export default {
         iconExit,
         iconHome,
         iconUser
+    },
+    data() {
+        return {};
+    },
+    methods: {
+        logout() {
+            this.$confirm("退出登录", "提示", {
+                confirmButtonText: "确定",
+                cancelButtonText: "取消",
+                type: "warning"
+            })
+                .then(() => {
+                    axios.get("/access/auth/logout").then(res => {
+                        if (res.data.code == 1) {
+                            util.removeSession("sessionId");
+                            this.$router.push({ path: "/" });
+                        } else {
+                            return Promise.reject({
+                                message: "退出登陆失败"
+                            });
+                        }
+                    });
+                })
+                .catch();
+        }
     }
 };
 </script>
