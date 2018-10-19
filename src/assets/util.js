@@ -10,6 +10,10 @@ export const removeSession = function(key){
   return sessionStorage.removeItem(key);
 }
 
+export const getSession = function(key){
+  return sessionStorage.getItem(key);
+}
+
 //ajax错误处理
 export const catchError = function(error) {
     if (error.response) {
