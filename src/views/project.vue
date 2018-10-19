@@ -17,13 +17,11 @@
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld";
 import navMenu from "@/components/NavMenu";
 import top from "@/components/top";
 export default {
     name: "project",
     components: {
-        HelloWorld,
         top,
         navMenu
     }
