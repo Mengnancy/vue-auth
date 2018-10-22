@@ -49,11 +49,15 @@ export default {
             loginParams.append("username", this.username);
             loginParams.append("password", this.password);
 
-            axios
-                .post("/access/auth/login", loginParams)
+            util.request({
+                method: "post",
+                url: "/auth/login",
+                data: loginParams
+            })
                 .then(res => {
-                    if (res.data.code == 1) {
-                        util.session("sessionId", res.data.data);
+                    //处理成功的请求
+                    if (res.code == 1) {
+                        util.session("sessionId", res.data);
                         this.$router.push({ path: "/product" });
                     } else {
                         return Promise.reject({
@@ -61,7 +65,9 @@ export default {
                         });
                     }
                 })
-                .catch(util.catchError);
+                .catch(error => {
+                    console.log(error);
+                });
         }
     }
 };

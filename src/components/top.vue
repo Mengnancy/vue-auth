@@ -43,7 +43,6 @@ import iconBase from "./IconBase";
 import iconExit from "./icon/IconExit";
 import iconHome from "./icon/IconHome";
 import iconUser from "./icon/IconUser";
-import axios from "axios";
 import * as util from "../assets/util.js";
 export default {
     name: "top",
@@ -64,8 +63,11 @@ export default {
                 type: "warning"
             })
                 .then(() => {
-                    axios.get("/access/auth/logout").then(res => {
-                        if (res.data.code == 1) {
+                    util.request({
+                        url: "/auth/logout",
+                        method: "GET"
+                    }).then(res => {
+                        if (res.code == 1) {
                             util.removeSession("sessionId");
                             this.$router.push({ path: "/" });
                         } else {

@@ -5,6 +5,7 @@ import store from './store'
 import router from './router'
 import * as util from "./assets/util.js";
 
+
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
