@@ -63,21 +63,26 @@ export default {
                 type: "warning"
             })
                 .then(() => {
-                    util.request({
-                        url: "/auth/logout",
-                        method: "GET"
-                    }).then(res => {
-                        if (res.code == 1) {
-                            util.removeSession("sessionId");
-                            this.$router.push({ path: "/" });
-                        } else {
-                            return Promise.reject({
-                                message: "退出登陆失败"
-                            });
-                        }
-                    });
+                    util
+                        .request({
+                            url: "/auth/logout",
+                            method: "GET"
+                        })
+                        .then(res => {
+                            if (res.code == 1) {
+                                util.removeSession("sessionId");
+                                this.$router.push({ path: "/" });
+                            } else {
+                                return Promise.reject({
+                                    message: "退出登陆失败"
+                                });
+                            }
+                        });
                 })
-                .catch();
+                .catch(err => {
+                    util.removeSession("sessionId");
+                    this.$router.push({ path: "/" });
+                });
         }
     }
 };

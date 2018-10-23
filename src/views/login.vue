@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .login {
     background: linear-gradient(
         to bottom,
