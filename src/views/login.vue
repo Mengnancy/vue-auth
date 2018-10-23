@@ -36,7 +36,6 @@ export default {
     },
     methods: {
         login() {
-            console.info("login");
             if (!this.username) {
                 this.$message.error("请填写用户名！");
                 return;
